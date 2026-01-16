@@ -17,8 +17,8 @@ producer = KafkaProducer(
 
 # Define the message to send
 message = {
-    'key': 'this-is-a-key',
-    'value': 'this-is-a-value'
+    'key': 'oh-!-une-cle',
+    'value': 'wow'
 }
 
 # Send the message to the Kafka topic
