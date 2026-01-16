@@ -2,7 +2,7 @@ from kafka import KafkaProducer
 import json
 
 # Define the Kafka broker and topic
-broker = 'kafka.loic-mulder-dev.svc.cluster.local:9092'
+broker = 'my-kafka.kylianvkr-dev.svc.cluster.local:9092'
 topic = 'my-first-topic'
 
 # Create a Kafka producer
@@ -11,7 +11,7 @@ producer = KafkaProducer(
     sasl_mechanism='SCRAM-SHA-256',
     security_protocol='SASL_PLAINTEXT',
     sasl_plain_username='user1',
-    sasl_plain_password='VkEc1DVF03',
+    sasl_plain_password='fyNJYEYf9G',
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
