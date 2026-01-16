@@ -8,11 +8,11 @@ topic = 'my-first-topic'
 # Create a Kafka producer
 producer = KafkaProducer(
     bootstrap_servers=[broker],
-   sasl_mechanism='SCRAM-SHA-256',
-     security_protocol='SASL_PLAINTEXT',
-     sasl_plain_username='user1',
-     sasl_plain_password='VkEc1DVF03',
-     value_serializer=lambda v: json.dumps(v).encode('utf-8')
+    sasl_mechanism='SCRAM-SHA-256',
+    security_protocol='SASL_PLAINTEXT',
+    sasl_plain_username='user1',
+    sasl_plain_password='VkEc1DVF03',
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
 # Define the message to send
