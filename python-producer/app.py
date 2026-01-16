@@ -4,7 +4,7 @@ import json
 
 # Define the Kafka broker and topic
 broker = 'my-kafka.kylianvkr-dev.svc.cluster.local:9092'
-topic = 'my-first-topic'
+topic = 'partitionned'
 
 # Create a Kafka producer
 producer = KafkaProducer(
@@ -30,5 +30,4 @@ while True:
     producer.flush()
 
     print(f"Message sent to topic {topic}")
-    time.sleep(0.5)
     i += 1

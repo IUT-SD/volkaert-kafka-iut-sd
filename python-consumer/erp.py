@@ -3,7 +3,7 @@ import json
 
 # Define the Kafka broker and topic
 broker = 'my-kafka.kylianvkr-dev.svc.cluster.local:9092'
-topic = 'my-first-topic'
+topic = 'partitionned'
 
 # Create a Kafka consumer
 consumer = KafkaConsumer(
