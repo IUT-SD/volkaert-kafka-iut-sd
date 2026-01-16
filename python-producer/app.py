@@ -15,11 +15,12 @@ producer = KafkaProducer(
     sasl_plain_password='fyNJYEYf9G',
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
+i = 0
 while True:
     # Define the message to send
     message = {
         'key': f'oh-!-une-cle {time.time()}',
-        'value': 'wow'
+        'value': i
     }
 
     # Send the message to the Kafka topic
@@ -30,3 +31,4 @@ while True:
 
     print(f"Message sent to topic {topic}")
     time.sleep(0.5)
+    i += 1
