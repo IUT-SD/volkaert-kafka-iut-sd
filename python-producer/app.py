@@ -1,4 +1,5 @@
 from kafka import KafkaProducer
+import time
 import json
 
 # Define the Kafka broker and topic
@@ -14,17 +15,18 @@ producer = KafkaProducer(
     sasl_plain_password='fyNJYEYf9G',
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
+while True:
+    # Define the message to send
+    message = {
+        'key': f'oh-!-une-cle {time.time()}',
+        'value': 'wow'
+    }
 
-# Define the message to send
-message = {
-    'key': 'oh-!-une-cle',
-    'value': 'wow'
-}
+    # Send the message to the Kafka topic
+    producer.send(topic, value=message)
 
-# Send the message to the Kafka topic
-producer.send(topic, value=message)
+    # Ensure all messages are sent before closing the producer
+    producer.flush()
 
-# Ensure all messages are sent before closing the producer
-producer.flush()
-
-print(f"Message sent to topic {topic}")
+    print(f"Message sent to topic {topic}")
+    time.sleep(0.5)
