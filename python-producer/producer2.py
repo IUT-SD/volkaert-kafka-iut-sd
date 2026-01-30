@@ -19,7 +19,8 @@ i = 0
 while True:
     # Define the message to send
     message = {
-        'key': f'oh-!-une-cle {time.time()}',
+        'key': f'un pokemon sauvage apparait !',
+        'time' : f'{time.time()}',
         'value': i
     }
 
